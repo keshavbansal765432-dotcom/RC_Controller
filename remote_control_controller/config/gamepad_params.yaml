@@ -1,0 +1,44 @@
+gamepad_control_node:
+  ros__parameters:
+    # Button mappings (Xbox / Cosmic Byte Ares layout)
+    button_gripper_close: 0   # A Button
+    button_gripper_open: 1    # B Button
+    button_mode_toggle: 2     # X Button (Switch between Cartesian & Joint jogging)
+    button_error_recovery: 3  # Y Button
+    button_deadman: 4         # LB Button (Must hold to move robot)
+    button_speed_toggle: 5    # RB Button (Toggle speed slow/fast)
+    button_shutdown: 6        # Back Button (Safely shutdown robot)
+
+    # Cartesian Jogging Axes
+    axis_linear_x: 1          # Left Stick Y (positive=forward, negative=backward)
+    axis_linear_y: 0          # Left Stick X (positive=left, negative=right)
+    axis_linear_z: 4          # Right Stick Y (positive=up, negative=down - used if use_triggers_for_z is false)
+    axis_angular_z: 3         # Right Stick X (positive=yaw left, negative=yaw right)
+    axis_angular_x: 6         # D-pad X (Roll)
+    axis_angular_y: 7         # D-pad Y (Pitch)
+    axis_trigger_left: 2      # LT Trigger (moves Z down)
+    axis_trigger_right: 5     # RT Trigger (moves Z up)
+    use_triggers_for_z: true  # True to use triggers for Z linear motion, False to use Right Stick Y
+
+
+    # Joint Jogging Axes (Axes mapped to Joint 1 to Joint 6)
+    axis_joint_1: 1           # Left Stick Y (Joint 1)
+    axis_joint_2: 0           # Left Stick X (Joint 2)
+    axis_joint_3: 4           # Right Stick Y (Joint 3)
+    axis_joint_4: 3           # Right Stick X (Joint 4)
+    axis_joint_5: 7           # D-pad Y (Joint 5)
+    axis_joint_6: 6           # D-pad X (Joint 6)
+
+    # Speed Multipliers / Limits
+    linear_speed_scale_slow: 0.08
+    linear_speed_scale_fast: 0.35
+    angular_speed_scale_slow: 0.15
+    angular_speed_scale_fast: 0.60
+    joint_speed_scale_slow: 0.15
+    joint_speed_scale_fast: 0.60
+
+    # Deadband to ignore stick centering errors
+    deadband: 0.08
+    
+    # Gripper configuration
+    gripper_force: 80.0
